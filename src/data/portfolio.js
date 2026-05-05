@@ -7,7 +7,7 @@ export const personalInfo = {
   github: 'https://github.com/DanielSDewes',
   linkedin: 'https://linkedin.com/in/danieldewes',
   email: 'danieldewes@email.com',
-  location: 'Brasil',
+  location: 'Brazil',
 };
 
 export const aboutHighlights = [
