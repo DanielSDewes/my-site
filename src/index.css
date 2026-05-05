@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #050505;
+  --bg2: #0d0d0d;
+  --bg3: #111111;
+  --bg4: #1a1a1a;
+  --accent: #00C2FF;
+  --accent2: #7C3AED;
+  --accent3: #00FFC8;
+  --text: #f0f0f0;
+  --text2: #a0a0a0;
+  --text3: #606060;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(0,194,255,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Sora', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+a, button { cursor: none; }
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.gradient-border-top {
+  position: relative;
+}
+.gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 2px 2px 0 0;
+}
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes spin-rev { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+@keyframes scroll-indicator { 0%{opacity:1;transform:scaleY(1)} 100%{opacity:0;transform:scaleY(0.3) translateY(20px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-spin-rev { animation: spin-rev 30s linear infinite; }
+.animate-scroll { animation: scroll-indicator 1.5s ease-in-out infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
