@@ -74,7 +74,7 @@ export const experience = [
   {
   period: '2025 — Present',
   role: 'Software Developer',
-  company: 'Solution Sistemas e Gestão',
+  company: 'Aliare',
   description:
     'Responsible for implementing complex improvements in production systems, performing bug analysis and diagnostics, and providing advanced technical support. Also acted as interim Tech Lead, guiding the development team, resolving technical challenges, mentoring developers, and driving improvements in financial workflows, third-party integrations, and SQL performance optimization.',
   tech: ['C#', 'SQL', 'REST APIs', 'Webhooks', 'PostgreSQL'],
@@ -83,7 +83,7 @@ export const experience = [
   {
     period: '2023 — 2025',
     role: 'Junior Software Developer',
-    company: 'Solution Sistemas e Gestão',
+    company: 'Aliare',
     description:
       'Worked on the development and maintenance of enterprise software systems, focusing on bug fixing, continuous improvement, and legacy data migration. Specialized in database modeling, advanced SQL querying, and transforming large datasets across multiple database technologies with consistency and accuracy.',
     tech: ['Oracle SQL', 'PostgreSQL', 'MySQL', 'GeneXus', 'Data Migration'],
@@ -92,7 +92,7 @@ export const experience = [
   {
     period: '2023',
     role: 'Software Development Technician',
-    company: 'Solution Sistemas e Gestão',
+    company: 'Aliare',
     description:
       'Developed software applications using GeneXus IDE, working with relational databases in PostgreSQL and MySQL environments. Contributed to internal systems maintenance, feature implementation, and technical database operations.',
     tech: ['GeneXus', 'PostgreSQL', 'MySQL', 'SQL'],
@@ -101,7 +101,7 @@ export const experience = [
   {
     period: '2022 — 2023',
     role: 'Administrative Clerk',
-    company: 'Solution Sistemas e Gestão',
+    company: 'Aliare',
     description:
       'Supported operational and management processes by organizing development workflows, documenting internal procedures, monitoring team activities, and assisting with project coordination, building a strong foundation in software delivery processes.',
     tech: ['Microsoft Excel', 'Process Management', 'Documentation'],
