@@ -1,7 +1,13 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import * as LucideIcons from 'lucide-react';
 import { projects } from '../../data/portfolio';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+
+function LucideIcon({ name, ...props }) {
+  const Icon = LucideIcons[name];
+  return Icon ? <Icon {...props} /> : null;
+}
 
 function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
@@ -53,7 +59,7 @@ function ProjectCard({ project, index }) {
           className="absolute top-5 right-5 w-9 h-9 rounded-lg flex items-center justify-center text-lg"
           style={{ background: `${project.accent}12`, color: project.accent }}
         >
-          {project.icon}
+          <LucideIcon name={project.icon} size={18} />
         </div>
         <div
           className="text-xs font-mono uppercase tracking-widest mb-2"

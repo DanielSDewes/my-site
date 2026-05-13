@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import * as LucideIcons from 'lucide-react';
+
+function LucideIcon({ name, ...props }) {
+  const Icon = LucideIcons[name];
+  return Icon ? <Icon {...props} /> : null;
+}
 
 // ─────────────────────────────────────────────
 // DATA
@@ -102,12 +108,12 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`,
 ];
 
 const RANKS = [
-  { min: 0,   label: 'Intern',        emoji: '👶', color: '#94a3b8' },
-  { min: 25,  label: 'Junior Dev',    emoji: '🌱', color: '#F59E0B' },
-  { min: 45,  label: 'Mid-Level',     emoji: '💻', color: '#8B5CF6' },
-  { min: 65,  label: 'Senior Dev',    emoji: '⚡', color: '#00C2FF' },
-  { min: 90,  label: 'Tech Lead',     emoji: '🚀', color: '#00FFC8' },
-  { min: 120, label: 'Elite Coder',   emoji: '🏆', color: '#FFD700' },
+  { min: 0,   label: 'Intern',        icon: 'Baby', color: '#94a3b8' },
+  { min: 25,  label: 'Junior Dev',    icon: 'Leaf', color: '#F59E0B' },
+  { min: 45,  label: 'Mid-Level',     icon: 'Laptop', color: '#8B5CF6' },
+  { min: 65,  label: 'Senior Dev',    icon: 'Zap', color: '#00C2FF' },
+  { min: 90,  label: 'Tech Lead',     icon: 'Rocket', color: '#00FFC8' },
+  { min: 120, label: 'Elite Coder',   icon: 'Trophy', color: '#FFD700' },
 ];
 
 const getRank = (wpm) => [...RANKS].reverse().find(r => wpm >= r.min) || RANKS[0];
@@ -289,7 +295,7 @@ function ComboDisplay({ combo }) {
         className="flex items-center gap-2 font-mono text-sm font-bold"
         style={{ color: colors }}
       >
-        <span>🔥</span>
+        <LucideIcon name="Flame" size={18} />
         <span>{combo}x COMBO</span>
       </motion.div>
     </AnimatePresence>
@@ -646,13 +652,13 @@ export default function CodeRacer() {
                   style={{ background: 'var(--bg4)', border: '0.5px solid var(--border)' }}
                 >
                   {[
-                    { icon: '⌨️', title: 'Type the code', desc: 'Reproduce every character exactly' },
-                    { icon: '🔥', title: 'Build combos', desc: 'Consecutive hits = score multiplier' },
-                    { icon: '⚡', title: 'WPM counted', desc: 'Words per minute tracked live' },
-                    { icon: '🏆', title: 'Earn your rank', desc: 'From Intern to Elite Coder' },
+                    { icon: 'Keyboard', title: 'Type the code', desc: 'Reproduce every character exactly' },
+                    { icon: 'Flame', title: 'Build combos', desc: 'Consecutive hits = score multiplier' },
+                    { icon: 'Clock', title: 'WPM counted', desc: 'Words per minute tracked live' },
+                    { icon: 'Award', title: 'Earn your rank', desc: 'From Intern to Elite Coder' },
                   ].map(item => (
                     <div key={item.title} className="flex flex-col gap-1">
-                      <span className="text-base">{item.icon}</span>
+                      <span className="text-base"><LucideIcon name={item.icon} size={18} /></span>
                       <span className="text-xs font-semibold" style={{ color: 'var(--text)' }}>{item.title}</span>
                       <span className="text-xs font-light" style={{ color: 'var(--text3)' }}>{item.desc}</span>
                     </div>
@@ -795,7 +801,7 @@ export default function CodeRacer() {
                       onMouseEnter={e => { e.currentTarget.style.color = '#ef4444'; e.currentTarget.style.borderColor = 'rgba(239,68,68,0.3)'; }}
                       onMouseLeave={e => { e.currentTarget.style.color = 'var(--text3)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
                     >
-                      ✕ Quit
+                      <LucideIcon name="X" size={14} /> Quit
                     </button>
                   </div>
                 </div>
@@ -829,7 +835,7 @@ export default function CodeRacer() {
                       transition={{ type: 'spring', stiffness: 260, delay: 0.1 }}
                       className="text-6xl mb-3"
                     >
-                      {rank.emoji}
+                      <LucideIcon name={rank.icon} size={52} />
                     </motion.div>
                     <motion.h3
                       initial={{ opacity: 0, y: 10 }}
@@ -847,9 +853,13 @@ export default function CodeRacer() {
                       className="font-mono text-sm"
                       style={{ color: 'var(--text3)' }}
                     >
-                      {isNewBest
-                        ? '🏆 New personal best! Keep it up!'
-                        : `Personal best: ${bestWpm} WPM — keep pushing!`}
+                      {isNewBest ? (
+                        <span className="inline-flex items-center gap-1">
+                          <LucideIcon name="Trophy" size={14} /> New personal best! Keep it up!
+                        </span>
+                      ) : (
+                        `Personal best: ${bestWpm} WPM — keep pushing!`
+                      )}
                     </motion.p>
                   </div>
 
@@ -894,7 +904,7 @@ export default function CodeRacer() {
                     <div className="flex justify-between text-xs font-mono mb-2">
                       {RANKS.map(r => (
                         <span key={r.label} style={{ color: wpm >= r.min ? r.color : 'var(--text3)' }}>
-                          {r.emoji}
+                          <LucideIcon name={r.icon} size={16} />
                         </span>
                       ))}
                     </div>
@@ -925,7 +935,7 @@ export default function CodeRacer() {
                       onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.boxShadow = '0 0 25px rgba(0,194,255,0.3)'; }}
                       onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.boxShadow = 'none'; }}
                     >
-                      ↺ Retry
+                      <LucideIcon name="RotateCcw" size={16} /> Retry
                     </button>
                     <button
                       onClick={nextSnippet}
@@ -934,7 +944,7 @@ export default function CodeRacer() {
                       onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,194,255,0.06)'; }}
                       onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}
                     >
-                      → Next Snippet
+                      <LucideIcon name="ArrowRight" size={16} /> Next Snippet
                     </button>
                     <button
                       onClick={resetGame}
@@ -943,7 +953,7 @@ export default function CodeRacer() {
                       onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
                       onMouseLeave={e => { e.currentTarget.style.color = 'var(--text3)'; e.currentTarget.style.borderColor = 'var(--border)'; }}
                     >
-                      ◻ Menu
+                      <LucideIcon name="Menu" size={16} /> Menu
                     </button>
                   </div>
                 </motion.div>

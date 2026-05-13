@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import * as LucideIcons from 'lucide-react';
 import { skills } from '../../data/portfolio';
+
+function LucideIcon({ name, ...props }) {
+  const Icon = LucideIcons[name];
+  return Icon ? <Icon {...props} /> : null;
+}
 
 function SkillBar({ name, level, delay = 0 }) {
   const [width, setWidth] = useState(0);
@@ -82,7 +88,9 @@ export default function Skills() {
               className="absolute inset-0 pointer-events-none"
               style={{ background: 'linear-gradient(135deg, rgba(0,194,255,0.015), transparent)' }}
             />
-            <div className="text-2xl mb-3">{cat.icon}</div>
+            <div className="text-2xl mb-3">
+              <LucideIcon name={cat.icon} size={28} />
+            </div>
             <div
               className="text-xs font-bold uppercase tracking-widest mb-5 font-mono"
               style={{ color: 'var(--accent)' }}

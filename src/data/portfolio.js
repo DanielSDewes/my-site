@@ -29,7 +29,7 @@ export const aboutStats = [
 export const skills = [
   {
     category: 'Backend',
-    icon: '⚡',
+    icon: 'Zap',
     items: [
       { name: 'Python', level: 92 },
       { name: 'FastAPI', level: 88 },
@@ -40,7 +40,7 @@ export const skills = [
   },
   {
     category: 'Frontend',
-    icon: '🎨',
+    icon: 'Code2',
     items: [
       { name: 'React', level: 78 },
       { name: 'JavaScript', level: 80 },
@@ -50,7 +50,7 @@ export const skills = [
   },
   {
     category: 'DevOps & Tools',
-    icon: '🛠',
+    icon: 'Tool',
     items: [
       { name: 'Git / GitHub', level: 90 },
       { name: 'Docker', level: 70 },
@@ -60,7 +60,7 @@ export const skills = [
   },
   {
     category: 'Architecture',
-    icon: '🏗',
+    icon: 'Building2',
     items: [
       { name: 'Clean Architecture', level: 80 },
       { name: 'SOLID Principles', level: 78 },
@@ -119,7 +119,7 @@ export const projects = [
   github: 'https://github.com/DanielSDewes/Remove-Fundo-Front',
   demo: null,
   accent: '#00C2FF',
-  icon: '🖼️',
+  icon: 'Image',
   },
   {
     type: 'Backend / API',
@@ -130,7 +130,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/API-remove-background',
     demo: null,
     accent: '#7C3AED',
-    icon: '⚡',
+    icon: 'Server',
   },
   {
     type: 'Full Stack / Productivity',
@@ -141,7 +141,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/ControlaEstudos',
     demo: null,
     accent: '#00FFC8',
-    icon: '📚',
+    icon: 'BookOpen',
   },
   {
     type: 'Realtime / Web Application',
@@ -152,7 +152,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/ChatOnline',
     demo: null,
     accent: '#00C2FF',
-    icon: '💬',
+    icon: 'MessageCircle',
   },
   {
     type: 'Web App / Information Platform',
@@ -163,7 +163,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/NoticiasEClima',
     demo: null,
     accent: '#7C3AED',
-    icon: '🌦️',
+    icon: 'CloudRain',
   },
   {
     type: 'Business / Landing Page',
@@ -174,7 +174,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/mmbier',
     demo: null,
     accent: '#F59E0B',
-    icon: '🍺',
+    icon: 'Beer',
   },
   {
     type: 'Frontend / UI Project',
@@ -185,7 +185,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/Adapter-apresentacao',
     demo: null,
     accent: '#00FFC8',
-    icon: '🎨',
+    icon: 'Monitor',
   },
   {
     type: 'Institutional / Web Platform',
@@ -196,7 +196,7 @@ export const projects = [
     github: 'https://github.com/DanielSDewes/jornada-estudante-uri',
     demo: null,
     accent: '#7C3AED',
-    icon: '🎓',
+    icon: 'GraduationCap',
   },
 ];
 
