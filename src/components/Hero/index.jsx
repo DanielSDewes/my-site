@@ -162,9 +162,9 @@ export default function Hero() {
             custom={1} variants={fadeUp} initial="hidden" animate="show"
             className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 font-sora"
           >
-            Building software{' '}
-            <span style={{ color: 'var(--accent)' }}>elegant</span>, fast{' '}
-            and scalable.
+            Building{' '}
+            <span style={{ color: 'var(--accent)' }}>scalable</span>, fast,{' '}
+            and elegant software.
           </motion.h1>
 
           <motion.p

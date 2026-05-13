@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: 'Daniel Dewes',
   role: 'Full Stack Developer',
-  tagline: 'Building software elegant, fast and scalable.',
+  tagline: 'Building fast, scalable, and elegant software.',
   subtitle:
     'Backend-focused developer specializing in robust systems, high-performance APIs, and modern web applications. Turning complex problems into clean, efficient solutions.',
   github: 'https://github.com/DanielSDewes',
